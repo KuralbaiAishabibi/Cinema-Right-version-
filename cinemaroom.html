@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Room</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header h1 {
+    display: inline-block;
+}
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+    float: right;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section Styles */
+.hero {
+    background-image: url('cinema-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: grey;
+}
+
+.hero .btn {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Movies Section */
+.movies {
+    padding: 50px 0;
+}
+
+.movies h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.movie-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.movie {
+    width: 23%;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.movie img {
+    max-width: 100%;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.movie h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.movie p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.movie .btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+</style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="container">
+            <h1>CinemaRoom</h1>
+            <nav>
+                <ul>
+                    <li><a href="C:\Users\Asus\Desktop\проекты раб\cinemaroom.html">Home</a></li>
+                    <li><a href="C:\Users\Asus\Desktop\проекты раб\Helloween tickets.html">Combo Movies</a></li>
+                    <li><a href="#">Schedule</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Welcome to CinemaRoom</h2>
+            <p>Enjoy the latest movies in high-quality screens</p>
+            <a href="#" class="btn">Book Tickets</a>
+        </div>
+    </section>
+
+    <!-- Movies Section -->
+    <section class="movies">
+        <div class="container">
+            <h2>Now Showing</h2>
+            <h2>Halloween Season Animations</h2>
+            <p style="text-align: center; color: #4b4b4b;">*Just for the <del>8000</del> 5000*</p>
+            <br>
+            <div class="movie-list">
+                <!-- Movie 1 -->
+                <div class="movie">
+                    <img src="C:\Users\Asus\Desktop\проекты раб\coraline.jpg" alt="Movie 1">
+                    <h3>Coraline</h3>
+                    <p>Genre: Family, Horror</p>
+                    <a href="file:///C:/Users/Asus/Desktop/%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B%20%D1%80%D0%B0%D0%B1/Coraline_Page.html" class="btn">Details</a>
+                </div>
+
+                <!-- Movie 2 -->
+                <div class="movie">
+                    <img src="C:\Users\Asus\Desktop\проекты раб\brides_corpes.jpg" alt="Movie 2">
+                    <h3>Corpse Bride</h3>
+                    <p>Genre: Family, Fantasy</p>
+                    <a href="#" class="btn">Details</a>
+                </div>
+
+                <!-- Movie 3 -->
+                <div class="movie">
+                    <img src="C:\Users\Asus\Desktop\проекты раб\nightmarechristmass.jpg" alt="Movie 3">
+                    <h3>The Nightmare Before Christmas</h3>
+                    <p>Genre: Family, Musical, Horror</p>
+                    <a href="#" class="btn">Details</a>
+                </div>
+
+                <!-- Movie 4 -->
+                <div class="movie">
+                    <img src="C:\Users\Asus\Desktop\проекты раб\Paranorman.jpg" alt="Movie 4">
+                    <h3>Paranorman</h3>
+                    <p>Genre:Family, Mystery, Horror</p>
+                    <a href="#" class="btn">Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Movies Section -->
+        <section class="movies">
+            <div class="container">
+                <h2>Christmas Season Movies</h2>
+                <div class="movie-list">
+                    <!-- Movie 1 -->
+                    <div class="movie">
+                        <img src="C:\Users\Asus\Desktop\проекты раб\Man-Who-Invited-Christmas.jpg" alt="Movie 5">
+                        <h3>The man who invented Christmas</h3>
+                        <p>Genre: Comedy, Fantasy</p>
+                        <a href="#" class="btn">Details</a>
+                    </div>
+    
+                    <!-- Movie 2 -->
+                    <div class="movie">
+                        <img src="C:\Users\Asus\Desktop\проекты раб\Harry Potter.jpg" alt="Movie 6">
+                        <h3>Harry Potter and Philosophy Stone</h3>
+                        <p>Genre: Family, Fantasy</p>
+                        <a href="#" class="btn">Details</a>
+                    </div>
+    
+                    <!-- Movie 3 -->
+                    <div class="movie">
+                        <img src="C:\Users\Asus\Desktop\проекты раб\Home alone.jpg" alt="Movie 7">
+                        <h3>Home Alone</h3>
+                        <p>Genre: Family, Comedy</p>
+                        <a href="C:\Users\Asus\Desktop\проекты раб\Home_Alone.html" class="btn">Details</a>
+                    </div>
+    
+                    <!-- Movie 4 -->
+                    <div class="movie">
+                        <img src="C:\Users\Asus\Desktop\проекты раб\Love actually.jpg" alt="Movie 8">
+                        <h3>Love Actually</h3>
+                        <p>Genre:Comedy, Romance</p>
+                        <a href="#" class="btn">Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CinemaRoom. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

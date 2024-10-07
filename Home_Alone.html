@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header h1 {
+    display: inline-block;
+}
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+    float: right;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Movie Details Section */
+.movie-details {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.movie-info {
+    display: flex;
+    align-items: center;
+}
+
+.movie-info img {
+    max-width: 250px;
+    margin-right: 30px;
+    border-radius: 10px;
+}
+
+.movie-description h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.movie-description p {
+    margin: 10px 0;
+}
+
+/* Ticket Booking Section */
+.ticket-booking {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.ticket-booking h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.select-date h3, .select-seats h3, .ticket-summary h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.select-date label, .select-seats label {
+    margin-right: 15px;
+    font-size: 1rem;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Seat Layout */
+.seat-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.seat-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.seat {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.seat:hover {
+    background-color: #ff6347;
+}
+
+.selected-seat {
+    background-color: #ff6347;
+}
+
+.btn-book {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Ticket Summary */
+.ticket-summary {
+    margin-top: 30px;
+}
+
+.ticket-summary p {
+    font-size: 1.2rem;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="container">
+            <h1>CinemaRoom</h1>
+            <nav>
+                <ul>
+                    <li><a href="C:\Users\Asus\Desktop\проекты раб\cinemaroom.html">Home</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Movie Details Section -->
+    <section class="movie-details">
+        <div class="container">
+            <div class="movie-info">
+                <img src="C:\Users\Asus\Desktop\проекты раб\Home alone.jpg" alt="Movie Poster">
+                <div class="movie-description">
+                    <h2>Home ALone</h2>
+                    <p><strong>Genre:</strong> Christmas Movie, Classic</p>
+                    <p><strong>Duration:</strong> 2h 15m</p>
+                    <p><strong>Rating:</strong> 6+</p>
+                    <p><strong>Description:</strong> The best movie to watch on Christmas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ticket Booking Section -->
+    <section class="ticket-booking">
+        <div class="container">
+            <h2>Book Your Tickets</h2>
+
+            <!-- Date Selection -->
+            <div class="select-date">
+                <h3>Select Date:</h3>
+                <form>
+                    <label>
+                        <input type="radio" name="date" value="Oct 10" onchange="updateSummary()"> Oct 10, 2024
+                    </label>
+                    <label>
+                        <input type="radio" name="date" value="Oct 11" onchange="updateSummary()"> Oct 11, 2024
+                    </label>
+                    <label>
+                        <input type="radio" name="date" value="Oct 12" onchange="updateSummary()"> Oct 12, 2024
+                    </label>
+                </form>
+            </div>
+
+            <!-- Seat Selection -->
+            <div class="select-seats">
+                <h3>Select Seats:</h3>
+                <div class="seat-layout">
+                    <div class="seat-row">
+                        <button class="seat" data-seat="A1" onclick="selectSeat(this)">A1</button>
+                        <button class="seat" data-seat="A2" onclick="selectSeat(this)">A2</button>
+                        <button class="seat" data-seat="A3" onclick="selectSeat(this)">A3</button>
+                    </div>
+                    <div class="seat-row">
+                        <button class="seat" data-seat="B1" onclick="selectSeat(this)">B1</button>
+                        <button class="seat" data-seat="B2" onclick="selectSeat(this)">B2</button>
+                        <button class="seat" data-seat="B3" onclick="selectSeat(this)">B3</button>
+                    </div>
+                    <div class="seat-row">
+                        <button class="seat" data-seat="C1" onclick="selectSeat(this)">C1</button>
+                        <button class="seat" data-seat="C2" onclick="selectSeat(this)">C2</button>
+                        <button class="seat" data-seat="C3" onclick="selectSeat(this)">C3</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ticket Summary -->
+            <div class="ticket-summary">
+                <h3>Ticket Summary:</h3>
+                <p><strong>Date:</strong> <span id="summary-date">None</span></p>
+                <p><strong>Seat:</strong> <span id="summary-seat">None</span></p>
+                <p><strong>Total Price:</strong> <span id="summary-price">$0</span></p>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="btn-book" onclick="confirmBooking()">Confirm Booking</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CinemaNow. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        let selectedSeat = null;
+        let ticketPrice = 10;  // Set ticket price here
+
+        function updateSummary() {
+            const selectedDate = document.querySelector('input[name="date"]:checked');
+            const dateText = selectedDate ? selectedDate.value : 'None';
+            document.getElementById('summary-date').innerText = dateText;
+        }
+
+        function selectSeat(seatElement) {
+            // Remove previously selected seat
+            if (selectedSeat) {
+                selectedSeat.classList.remove('selected-seat');
+            }
+
+            // Mark the new seat as selected
+            selectedSeat = seatElement;
+            seatElement.classList.add('selected-seat');
+
+            // Update the seat in the summary
+            const seatText = seatElement.dataset.seat;
+            document.getElementById('summary-seat').innerText = seatText;
+
+            // Update total price
+            document.getElementById('summary-price').innerText = `$${ticketPrice}`;
+        }
+
+        function confirmBooking() {
+            const selectedDate = document.getElementById('summary-date').innerText;
+            const selectedSeat = document.getElementById('summary-seat').innerText;
+
+            if (selectedDate === 'None' || selectedSeat === 'None') {
+                alert('Please select both a date and a seat.');
+            } else {
+                alert(`Booking confirmed for ${selectedSeat} on ${selectedDate}. Enjoy your movie!`);
+            }
+        }
+    </script>
+</body>
+</html>
